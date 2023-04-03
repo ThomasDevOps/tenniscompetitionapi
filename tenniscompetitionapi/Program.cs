@@ -9,12 +9,11 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<TennisDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TennisDb"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MYSQLCONNSTR_TennisDb"));
 });
 
 
 var app = builder.Build();
-app.UsePathBase("/api");
 
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<TennisDbContext>();
