@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<TennisDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MYSQLCONNSTR_TennisDb"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TennisDb"));
 });
 
 
